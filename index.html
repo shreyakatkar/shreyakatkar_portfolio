@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Editable professional portfolio" />
+  <title>Shreya Katkar | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="navbar">
+    <a class="brand" href="#home" id="navName">SK.</a>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="btn btn-outline" id="editBtn">Edit Portfolio</button>
+  </header>
+
+  <main>
+    <section class="hero section" id="home">
+      <div class="hero-content">
+        <p class="eyebrow">HELLO, I'M</p>
+        <h1 id="heroName">Shreya Katkar</h1>
+        <h2 id="heroRole">Business & Data Analyst Fresher</h2>
+        <p class="hero-text" id="heroIntro">
+          I turn business questions into clear, data-driven insights using analytics, visualization and technology.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#projects">View Projects</a>
+          <a class="btn btn-outline" id="resumeBtn" href="#" target="_blank">View Resume</a>
+        </div>
+        <div class="socials">
+          <a id="linkedinLink" href="#" target="_blank" rel="noopener">LinkedIn</a>
+          <a id="githubLink" href="#" target="_blank" rel="noopener">GitHub</a>
+          <a id="emailLink" href="#">Email</a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="profile-circle" id="profileInitials">SK</div>
+        <div class="quick-card">
+          <span>Currently focused on</span>
+          <strong id="focusText">Business Analytics, SQL & Power BI</strong>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="section-heading">
+        <p class="eyebrow">ABOUT ME</p>
+        <h2>Turning learning into practical work.</h2>
+      </div>
+      <div class="about-grid">
+        <p id="aboutText"></p>
+        <div class="stats">
+          <div class="stat-card"><strong id="projectCount">4+</strong><span>Projects</span></div>
+          <div class="stat-card"><strong id="skillCount">10+</strong><span>Core Skills</span></div>
+          <div class="stat-card"><strong id="educationShort">BCA</strong><span>Education</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section muted" id="skills">
+      <div class="section-heading">
+        <p class="eyebrow">SKILLS</p>
+        <h2>Tools I work with.</h2>
+      </div>
+      <div class="skill-list" id="skillList"></div>
+    </section>
+
+    <section class="section" id="projects">
+      <div class="section-heading">
+        <p class="eyebrow">PROJECTS</p>
+        <h2>Selected work.</h2>
+      </div>
+      <div class="projects-grid" id="projectGrid"></div>
+    </section>
+
+    <section class="section muted" id="education">
+      <div class="section-heading">
+        <p class="eyebrow">EDUCATION</p>
+        <h2>Academic background.</h2>
+      </div>
+      <div id="educationList" class="timeline"></div>
+    </section>
+
+    <section class="section contact-section" id="contact">
+      <div class="contact-card">
+        <div>
+          <p class="eyebrow">LET'S CONNECT</p>
+          <h2 id="contactHeading">Have an opportunity or project in mind?</h2>
+          <p id="contactText">I’m open to entry-level analytics and business-focused opportunities.</p>
+        </div>
+        <div class="contact-actions">
+          <a class="btn btn-primary" id="contactEmailBtn" href="#">Email Me</a>
+          <a class="btn btn-outline" id="contactLinkedinBtn" href="#" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© <span id="year"></span> <span id="footerName">Shreya Katkar</span>. Built with HTML, CSS & JavaScript.</p>
+  </footer>
+
+  <div class="modal-backdrop" id="editorModal">
+    <div class="editor-modal">
+      <div class="editor-header">
+        <div>
+          <p class="eyebrow">PORTFOLIO EDITOR</p>
+          <h2>Edit your portfolio</h2>
+        </div>
+        <button class="icon-btn" id="closeEditor" aria-label="Close">×</button>
+      </div>
+
+      <div class="editor-body">
+        <div class="form-grid">
+          <label>Full Name<input id="fName" type="text"></label>
+          <label>Role / Headline<input id="fRole" type="text"></label>
+          <label>Short Intro<textarea id="fIntro"></textarea></label>
+          <label>About<textarea id="fAbout"></textarea></label>
+          <label>Current Focus<input id="fFocus" type="text"></label>
+          <label>Education Short Name<input id="fEducationShort" type="text"></label>
+          <label>LinkedIn URL<input id="fLinkedin" type="url"></label>
+          <label>GitHub URL<input id="fGithub" type="url"></label>
+          <label>Email Address<input id="fEmail" type="email"></label>
+          <label>Resume URL<input id="fResume" type="url"></label>
+        </div>
+
+        <div class="editor-section">
+          <div class="editor-section-title">
+            <h3>Skills</h3>
+            <button class="small-btn" id="addSkill">+ Add Skill</button>
+          </div>
+          <div id="skillEditor"></div>
+        </div>
+
+        <div class="editor-section">
+          <div class="editor-section-title">
+            <h3>Projects</h3>
+            <button class="small-btn" id="addProject">+ Add Project</button>
+          </div>
+          <div id="projectEditor"></div>
+        </div>
+
+        <div class="editor-section">
+          <div class="editor-section-title">
+            <h3>Education</h3>
+            <button class="small-btn" id="addEducation">+ Add Education</button>
+          </div>
+          <div id="educationEditor"></div>
+        </div>
+      </div>
+
+      <div class="editor-footer">
+        <button class="btn btn-danger" id="resetBtn">Reset Defaults</button>
+        <div>
+          <button class="btn btn-outline" id="cancelBtn">Cancel</button>
+          <button class="btn btn-primary" id="saveBtn">Save Changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast">Saved successfully.</div>
+
+  <script src="script.js"></script>
+</body>
+</html>
